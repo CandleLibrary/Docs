@@ -1,0 +1,56 @@
+<import url="/dev/common-components/title.html">
+
+<scope>
+	<title>
+		<div slot=library>wick</div>
+		<div slot=module>introduction</div>
+	</title>
+	
+		What is wick?
+
+		Wick is a component compiler. What does that mean. Wick is able to take html files containing markup that includes Javascrip, CSS, HTML and build them into special dynamic components that can be included into other projects. 
+
+		Stand Alone APP. 
+		Self Contained HTML Component. 
+		CLI Apps. 
+		Android / iOS interfaces. 
+
+		Wick can be combined with Radiate to create full multipage websites that act as single page experience. 
+
+		# Sounds Exciting, but how do I begin?
+
+		Glad you asked. Let's start with a simple tutorial. 
+
+		We have here a simple file. Let's call it simple.html.
+		
+		```wick
+		<div></div>
+
+		```
+
+		Contained within this file is an html element. Wick is first and foremost an HTML parser. It is able to recognize and HTML elements and respond to these elements in a predictable manner. Let's add a little flair to this element.
+
+		```wick
+		<div>((here_be_flair))</div>
+		```
+
+		Well what do we have here? If you ever used a templating framework such as the indelible handle bars, then this should be familiar. In wick, syntax such as `((here_be_flait))` is refered to a binding point. It allows you to use Javascript Expressions within HTML to produce dynamic content. In this case, the binding point will dump data into the space between the div tags when it receives data. Bindings receive data from objects that are passed to the binding. There several ways that a binding receives data, but for this introduction, we'll use on if the simplest methods, a text input element.
+
+		```wick
+		<scope>
+			<div>((here_be_flair))</div>
+			<input type=text value=((here_be_flair))>
+		</scope>
+		```
+		> Woah, woah, woah, what hecks going on!? There's more here then just a simple text element. 
+
+		I know, sorry, trying to keep it simple, but in order to make bindings work, we need a control structure to define where bindings operate. The scope> element defines a region in which a certain set of bindings operate. Should there be another binding outside the scope element called `here_be_flair`, it would have no impact on on the bindings we see within this scope. Scopes provide a powerfull mechanism to handle data flow within a componet. see more here. 
+
+		For now, let's just say that scope is needed, and it allows the input element to work as a binding data source. You'll notice that the value attribute of the input has been assigned a binding as well. This is a two way binding now. Data received will show up within the inputs text field, and updates on the text field will dump that text data into the binding. 
+
+		let's check it out. 
+
+		Cool huh? That's all well and good, but isn't this just another library then like react or angular. 
+
+		Well yes
+</scope>

@@ -1,0 +1,10 @@
+{
+  "name": "@candlefw/docs",
+  "version": "0.0.1",
+  "description": "CandleFW Documentation",
+  "main": "index.html",
+  "repository": "github.com/candlefw/docs",
+  "author": "Anthony <anthonycweathersby@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
