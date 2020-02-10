@@ -1,0 +1,45 @@
+<scope import="main_page">
+	<wc>
+		((links))
+		<scope import=scrl element=li>
+			<a href=((href))>((name))</a>
+			<wc>
+				(( 
+					sub ?
+					Array
+					.prototype
+					.slice
+					.call(sub.getElementsByTagName("h1"))
+					.map( 
+						(t,i,b)=>({tp:t.offsetTop, bt:(b[i+1]) ? b[i+1].offsetTop : 10000, href:"#" + t.id, name : t.innerHTML})
+					) : []
+				))
+				<scope import=scrl element=li style="(( ((tp < (scrl+400) && (scrl+400) < bt)) ? "font-weight:800":"d" ))" ><a  href=((href))>((name))</a></scope>	
+			</wc>
+		</scope>
+	</wc>
+
+	<script on=((main_page))>
+		const lns = [
+			{href:"/libraries/wick/introduction/", name:"Introduction"},
+			{href:"/libraries/wick/elements/", name:"Elements"}
+		]
+
+		for(const link of lns)
+			if(link.name == name)
+				link.sub = ele;
+			else 
+				link.sub = null;	
+		
+		ele.addEventListener("scroll", e=>{
+			scrl = e.target.scrollTop;
+		})
+
+		links = lns.slice();
+	</script>
+
+	<script on=((loading))>
+		scrl = 1;
+	</script>
+
+</scope>

@@ -1,0 +1,51 @@
+<import url="/dev/components/example/example.html">
+<scope export="wick_data main_page" class="guide-view">
+
+		<label class="alpha">alpha 0.8.11</label>
+
+		Wick Elements
+
+		<h1 id=scope> Scopes </h1>
+
+		<pre> &lt; scope> or &lt; ws>  </pre>
+		
+		Scope is the heart and soul of a wick component. It defines data flow boundaries and provides mechanisms to integrate scripts and CSS code into a scoped set of elements. Every component that wick generates has a scope assigned to it's root element. 
+
+		<example>
+			<scope>This element is scoped</scope>
+		</example>
+
+		<example>
+			<scope element="a" href="#">This element is scoped</scope>
+		</example>
+
+		attributes 
+			export 
+			import
+			element
+			component
+
+		<h1 id=container> Container </h1>
+
+		<h3>Transitions</h3>
+
+		<ul>
+			<li>trs_asc_in | scope is transitioning into view, from a lower index position into a higher index. i.e in from the top of the screen</li>
+			<li>trs_asc_out | scope is transitioning out of the view, from a lower index position into a higher index. i.e. out through the bottom of the screen</li>
+			<li>trs_dec_in | scope is transitioning into view, from a higher index position into a lower index. i.e. in form the bottom of the screen</li>
+			<li>trs_dec_out | scope is transitioning out of the view, from a higher index position into a lower index. i.e. out through the top of the screen</li>
+		</ul>
+
+		<pre> &lt; container> or &lt; wc> </pre> Handles array bindings
+		Need to place within each a binding that returns an array like object.
+		Optionally may include filter tags to define custom filtering
+
+		<h1 id=filter> Filter </h1>
+
+		<pre> &lt; filter> or &lt; f>  </pre>
+		types: sort, filter, scrub, limit, 
+
+		<script on=((mounted))>
+			main_page = {name:"Elements", ele:this.ele};
+		</script>
+</scope>

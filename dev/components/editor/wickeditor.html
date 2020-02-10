@@ -1,0 +1,42 @@
+<scope element=div component=wick-editor class=wick-editor import=wick_data>
+
+	<div class="wick-editor-textarea" pin=cm />
+
+	<div class="wick-editor-mount-point" pin=wick_mount_point/>
+
+	<script on=((loading))>
+		this.cm = cm(cm$, {
+			value:"",
+			mode:"wick",
+			theme:"default",
+			lineWrapping:true,
+			lineNumbers:true
+		});
+
+		this.cm.setSize("100%", "100%");
+
+		setTimeout(()=>this.cm.refresh(), 100);
+
+		this.cm.on("change", ()=>{
+			data_update = this.cm.getValue();
+		})
+	</script>
+
+	<script on=((wick_data))>
+		this.cm.setValue(wick_data.replace("\u00a0"," "));
+	</script>
+
+	<script on=((data_update))>
+
+		try{
+			const c = await (await wick(`<div>${data_update}</div>`)).mount(wick_mount_point$);
+
+			if(this.c && this.c.destroy) this.c.destroy();
+
+			this.c  = c;
+		}catch(e){
+			console.log(e);
+		}
+
+	</script>
+</scope>

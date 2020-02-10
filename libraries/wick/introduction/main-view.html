@@ -1,14 +1,31 @@
-<import url="/dev/common-components/title.html">
+<import url="/dev/components/example/example.html">
 
-<scope>
-	<title>
-		<div slot=library>wick</div>
-		<div slot=module>introduction</div>
-	</title>
-	
-		What is wick?
+<scope export="wick_data main_page" class="guide-view">
 
-		Wick is a component compiler. What does that mean. Wick is able to take html files containing markup that includes Javascrip, CSS, HTML and build them into special dynamic components that can be included into other projects. 
+		<label class="alpha">alpha 0.8.11</label>
+
+		<a href="/libraries/wick/elements/">elements</a>
+
+		<h1 id="intro"> Introduction to cfw.Wick </h1>
+		
+		<h3>What is Wick?</h3>
+
+		<p>Wick is a component compiler. Using a set special syntaxes and a bevy of magic, Wick is able to corral code, markup, and css from all over and bring it into one, well composed place. Better yet, wick tries is darndest to keep things simple. Want to use regular ole HTML files? you got it! Want to arrange your components in directory you want? No problem!</p>
+
+		<p> Wick is an HTML first template system. This means all your components are defined in HTML files. Wick is able to parse the contents of HTML files, including any JavaScript markup, and build a reactive component that can be inserted into existing sites. </p>
+
+		<b>Click the code block below to compile it!</b>
+
+		<example>
+			<div> I'm A Wick Component! </div>
+		</example>
+
+		There are several ways to get Wick to render into a component. 
+
+
+
+
+		What that means is Wick is able to take html files containing markup that includes Javascrip, CSS, HTML and build them into special dynamic components that can be included into other projects. 
 
 		Stand Alone APP. 
 		Self Contained HTML Component. 
@@ -17,32 +34,48 @@
 
 		Wick can be combined with Radiate to create full multipage websites that act as single page experience. 
 
-		# Sounds Exciting, but how do I begin?
+		<cm/>  Sounds Exciting, but how do I begin?
 
 		Glad you asked. Let's start with a simple tutorial. 
 
 		We have here a simple file. Let's call it simple.html.
 		
-		```wick
-		<div></div>
-
-		```
+		<example>
+			<div></div>
+		</example>
 
 		Contained within this file is an html element. Wick is first and foremost an HTML parser. It is able to recognize and HTML elements and respond to these elements in a predictable manner. Let's add a little flair to this element.
 
-		```wick
-		<div>((here_be_flair))</div>
-		```
-
-		Well what do we have here? If you ever used a templating framework such as the indelible handle bars, then this should be familiar. In wick, syntax such as `((here_be_flait))` is refered to a binding point. It allows you to use Javascript Expressions within HTML to produce dynamic content. In this case, the binding point will dump data into the space between the div tags when it receives data. Bindings receive data from objects that are passed to the binding. There several ways that a binding receives data, but for this introduction, we'll use on if the simplest methods, a text input element.
-
-		```wick
-		<scope>
+		<example>
 			<div>((here_be_flair))</div>
-			<input type=text value=((here_be_flair))>
-		</scope>
-		```
-		> Woah, woah, woah, what hecks going on!? There's more here then just a simple text element. 
+		</example>
+
+		<cm/> Well what do we have here? 
+
+		If you ever used a templating framework such as the indelible handle bars, then this should be familiar. In wick, syntax such as `((here_be_flait))` is refered to a binding point. It allows you to use Javascript Expressions within HTML to produce dynamic content. In this case, the binding point will dump data into the space between the div tags when it receives data. Bindings receive data from objects that are passed to the binding. There several ways that a binding receives data, but for this introduction, we'll use on if the simplest methods, a text input element.
+		((data))
+		
+		<example>
+			<script on=((loading))>
+				cats = [
+					{ id: 'J---aiyznGQ', name: 'Keyboard Cat' },
+					{ id: 'z_AbfPXTKms', name: 'Maru' },
+					{ id: 'OUtn3pvWmpg', name: 'Henri The Existential Cat' }
+				];
+			</script>
+
+			<h1>The Famous Cats of YouTube</h1>
+
+			<wc>
+				((cats))
+				<scope>
+					<a target="_blank" href=((`https://www.youtube.com/watch?v=${id}`))>
+						((name))
+					</a>
+				</scope>
+			</wc>
+		</example>
+		<cm/> Woah, woah, woah, what the heck is going on!? There's more here then just a simple text element. 
 
 		I know, sorry, trying to keep it simple, but in order to make bindings work, we need a control structure to define where bindings operate. The scope> element defines a region in which a certain set of bindings operate. Should there be another binding outside the scope element called `here_be_flair`, it would have no impact on on the bindings we see within this scope. Scopes provide a powerfull mechanism to handle data flow within a componet. see more here. 
 
@@ -50,7 +83,27 @@
 
 		let's check it out. 
 
-		Cool huh? That's all well and good, but isn't this just another library then like react or angular. 
+		Cool huh? 
 
-		Well yes
+		<h1 id=bindings> There are no directives in wick ... <br/>&lpar;&lpar; just bindings &rpar;&rpar;</h1>
+
+		<cm/> That's all well and good, but isn't this just another library then like react or angular. 
+
+		Topics:
+		New Elements
+		Bindings
+		Events
+		Containers
+		Data Flow
+		Presets
+		Animation
+		Plugins
+
+		Tutorials:
+		Container Filtering
+		Advanced scrolling
+
+		<script on=((mounted))>
+			main_page = {name:"Introduction", ele:this.ele};
+		</script>
 </scope>
