@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	((head))
+	<body>
+		<app class="app">
+			<element id="header" class="nav">
+				<component url="/libraries/common/nav.html"></component>
+			</element>
+			<element id="index" class="index">
+				<component url="/libraries/wick/component/index.html"></component>
+			</element>
+			<element id="main-view" class="main-view">
+				((_data_))
+				<component class="mable" url="/dev/components/editor/wickeditor.html"></component>
+			</element>
+		</app>
+		<script src="/resources/scripts/main.js"></script>
+	</body>
+</html>

@@ -1,10 +1,9 @@
 <import url="/dev/components/example/example.html">
+<import url="/dev/components/version.html">
 
 <scope export="wick_data main_page" class="guide-view">
-
-		<label class="alpha">alpha 0.8.11</label>
-
-		<a href="/libraries/wick/elements/">elements</a>
+	
+		<version type=wick/>
 
 		<h1 id="intro"> Introduction to cfw.Wick </h1>
 		
@@ -21,8 +20,6 @@
 		</example>
 
 		There are several ways to get Wick to render into a component. 
-
-
 
 
 		What that means is Wick is able to take html files containing markup that includes Javascrip, CSS, HTML and build them into special dynamic components that can be included into other projects. 
@@ -77,9 +74,9 @@
 		</example>
 		<cm/> Woah, woah, woah, what the heck is going on!? There's more here then just a simple text element. 
 
-		I know, sorry, trying to keep it simple, but in order to make bindings work, we need a control structure to define where bindings operate. The scope> element defines a region in which a certain set of bindings operate. Should there be another binding outside the scope element called `here_be_flair`, it would have no impact on on the bindings we see within this scope. Scopes provide a powerfull mechanism to handle data flow within a componet. see more here. 
+		<p>I know, sorry, trying to keep it simple, but in order to make bindings work, we need a control structure to define where bindings operate. The &lt;scope> element defines a region in which a certain set of bindings operate. Should there be another binding outside the scope element called `here_be_flair`, it would have no impact on on the bindings we see within this scope. Scopes provide a powerfull mechanism to handle data flow within a componet. see more here. </p>
 
-		For now, let's just say that scope is needed, and it allows the input element to work as a binding data source. You'll notice that the value attribute of the input has been assigned a binding as well. This is a two way binding now. Data received will show up within the inputs text field, and updates on the text field will dump that text data into the binding. 
+		<p>For now, let's just say that scope is needed, and it allows the input element to work as a binding data source. You'll notice that the value attribute of the input has been assigned a binding as well. This is a two way binding now. Data received will show up within the inputs text field, and updates on the text field will dump that text data into the binding. </p>
 
 		let's check it out. 
 

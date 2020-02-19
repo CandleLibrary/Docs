@@ -44,6 +44,8 @@ a:hover{
 	text-decoration: none;
 }
 
+
+
 /* CodeMirror Settings */
 
 .CodeMirror{
@@ -86,6 +88,7 @@ a:hover{
 
 
 .main-view {
+	font-size: 1.3em;
 	position: relative;
 	grid-area: main;
 	width: 100%;
@@ -221,4 +224,9 @@ a:hover{
 .cm-string,
 .example .string {
 	color: hsl(177, 57%, 68%);
+}
+
+.guide-view h1{
+	width: 100%;
+	border-top: 1px solid black;
 }

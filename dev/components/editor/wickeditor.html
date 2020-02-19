@@ -1,7 +1,6 @@
 <scope element=div component=wick-editor class=wick-editor import=wick_data>
 
 	<div class="wick-editor-textarea" pin=cm />
-
 	<div class="wick-editor-mount-point" pin=wick_mount_point/>
 
 	<script on=((loading))>
@@ -23,7 +22,7 @@
 	</script>
 
 	<script on=((wick_data))>
-		this.cm.setValue(wick_data.replace("\u00a0"," "));
+		this.cm.setValue(wick_data.replace(" " ," "));
 	</script>
 
 	<script on=((data_update))>

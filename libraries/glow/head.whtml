@@ -1,0 +1,12 @@
+<head>
+	<script type="application/javascript" src="/cfw/radiate"></script>
+	<script type="module" src="/resources/scripts/plugin_wickdown.js"></script>
+	<script src="/resources/scripts/codemirror.js"></script>
+	<link type="text/css" rel="stylesheet" href="/resources/css/codemirror.css">
+	<link type="text/css" rel="stylesheet" href="/resources/css/main.css">
+	<script type="module" src="/lantern-poll/?libraries;resources"></script>
+	<link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Cantarell&display=swap" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Mallanna&display=swap" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet"/>
+</head>
