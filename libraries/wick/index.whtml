@@ -11,7 +11,7 @@
 			</element>
 			<element id="main-view" class="main-view">
 				((_data_))
-				<component class="mable" url="/dev/components/editor/wickeditor.html"></component>
+				<component id=editor class="mable" url="/dev/components/editor/wickeditor.html"></component>
 			</element>
 		</app>
 		<script src="/resources/scripts/main.js"></script>

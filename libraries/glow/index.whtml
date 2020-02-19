@@ -7,7 +7,7 @@
 				<component url="/libraries/common/nav.html"></component>
 			</element>
 			<element id="index" class="index">
-				<component url="/dev/components/index.html"></component>
+				<component url="/libraries/wick/component/index.html"></component>
 			</element>
 			<element id="main-view" class="main-view">
 				((_data_))

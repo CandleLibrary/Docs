@@ -1,0 +1,29 @@
+<scope class=scrollbar component=scrollbar>
+	<!-- Handles the scrolling of the parent element  -->
+	<script on=(!(loading))>
+		this.par_ele = this.ele.parentElement;
+
+		this.par_ele.style.overflow = "hidden";
+		
+		this.par_ele.addEventListener("wheel", (e)=>{
+			const scroll = parseInt(Math.max(0,Math.min(this.par_ele.scrollHeight, this.par_ele.scrollTop + e.deltaY*2)));
+			scroll_target = scroll;
+		})
+	</script>
+
+	<script on=(!(scroll_target))>
+		const val = ((scroll_target - this.par_ele.scrollTop) * 0.15);
+		
+		if(Math.abs(val) > 0.0005){
+			scroll_target = scroll_target;
+			this.par_ele.scrollTop += val|0;
+		}else{
+			this.par_ele.scrollTop = scroll_target;
+		}
+	</script>
+
+	<script on=((unloading))>
+		
+	</script>
+
+</scope>
