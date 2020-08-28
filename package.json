@@ -1,7 +1,7 @@
 {
   "name": "@candlefw/docs",
   "version": "0.0.1",
-  "description": "Documentation Generating Tools",
+  "description": "Repository Documents Generator",
   "main": "./build/library/cli.js",
   "repository": "github.com/candlefw/docs",
   "author": "Anthony <anthonycweathersby@gmail.com>",
