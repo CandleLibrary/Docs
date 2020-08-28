@@ -1,0 +1,49 @@
+@NAME DocumentationFragmentParser
+
+@IGNORE θws θnl
+
+@SYMBOL <! -- ```
+
+###############################################################################################################
+###############################################################################################################
+###############################################################################################################
+# Used for documentation files found within ./doc_fragments/
+
+<> start → fragments                                                                                           
+
+<> fragments → fragment(+)
+
+<> fragment > fragment_head fragment_preamble fragment_tail fragment_body? 
+    ↦r{ { type:"fragment", preamble:$$sym2, content:$sym4, pos } }
+    
+<> fragment_head > \<! \--
+
+<> fragment_body > ( fragment_line(+) ) ↦r{ $sym1.join("\n") }
+
+<> fragment_line > data θnl?
+    ↦r{  $$sym1 }
+
+<> data > ( ( θid | θnum | θsym | keywords | θany | \\ /* | \\ | pre_section ↦r{ $sym1.slice() } )(+) )
+    ↦r{ pos }
+
+<> fragment_preamble > ( usage_option | \[ usage_options \] ↦r{ $sym2 } )? (\: usage_specifier)?
+    ↦r{ { activated:true, usage:$sym1, specifier:$$sym2 } }
+
+<> fragment_tail > \-- \>
+
+<> pre_section > ``` ( θany | θid | θnum | θsym | \\ (RED θws) (RED θnl) ``` )(+) ```  ↦r{ pos }
+
+<> usage_specifier > θid
+
+<> usage_options > usage_option(+;)
+
+<> usage_option > τREADME
+    | τAPI
+    | τMAIN_PAGE
+    | θid
+
+<> keywords > τREADME
+    | τAPI
+    | τMAIN_PAGE
+    
+

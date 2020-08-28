@@ -1,10 +1,27 @@
 {
   "name": "@candlefw/docs",
   "version": "0.0.1",
-  "description": "CandleFW Documentation",
-  "main": "index.html",
+  "description": "Documentation Generating Tools",
+  "main": "./build/library/cli.js",
   "repository": "github.com/candlefw/docs",
   "author": "Anthony <anthonycweathersby@gmail.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "type": "module",
+  "bin": {
+    "cfw.doc.readme": "./build/library/build_readme.js",
+    "cfw.doc.mainpage": "./build/library/build_api.js",
+    "cfw.doc.api": "./build/library/build_api.js"
+  },
+  "scripts": {
+    "compile": "yarn compile.comment_parser && yarn compile.fragment_parser",
+    "compile.comment_parser": "hydrocarbon compile -u -o ./source/typescript/parser_data  -t module ./source/grammar/comment.hcg",
+    "compile.fragment_parser": "hydrocarbon compile -u -o ./source/typescript/parser_data -t module ./source/grammar/doc_fragment.hcg"
+  },
+  "dependencies": {
+    "@candlefw/hydrocarbon": "0.3.4-dev-1",
+    "@candlefw/ts": "latest",
+    "@candlefw/conflagrate": "0.0.5-alpha",
+    "text-to-svg": "^3.1.5"
+  }
 }

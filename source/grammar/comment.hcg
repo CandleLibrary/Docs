@@ -1,0 +1,38 @@
+@NAME CommentParser
+
+@IGNORE θws θnl
+
+@SYMBOL /* */ 
+
+@IMPORT ./doc_fragment.hcg as doc
+
+###############################################################################################################
+###############################################################################################################
+###############################################################################################################
+# Productions
+###############################################################################################################
+###############################################################################################################
+###############################################################################################################
+
+<> start → comment                                                                                           
+
+<> comment → single_line_comment
+    | multiline_comment  
+
+<> single_line_comment > \/ (ERR θws) \/ θany 
+
+<> multiline_comment > multiline_head multiline_comment_preamble multiline_body? multiline_comment_tail
+    ↦r{ { type:"multiline", preamble:$$sym2, content:$sym3 } }
+    
+<> multiline_head > \/* θnl?
+
+<> multiline_body > ( multiline_line(+) ) ↦r{ $sym1.join("\n") }
+
+<> multiline_line > doc::data θnl?
+    ↦r{  $$sym1 ? $$sym1.slice()[0] == "*" ? $$sym1.slice().slice(1) :  $$sym1.slice() : "" }
+
+<> multiline_comment_preamble > \* doc::fragment_preamble? θnl? ↦r{ $$sym2 }
+
+<> multiline_comment_tail > \*/
+    
+
