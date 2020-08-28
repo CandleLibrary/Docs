@@ -219,7 +219,7 @@ function addFragmentToSections(doc_fragment: fragment_data, sections: any, origi
         if (!sections[section])
             sections[section] = [];
 
-        sections[section].push(`\n\n<!-- origin="file:///.${origin}#${line}" -->\n\n${content}\n\n<div align="right"><a href=".${origin}#${line}"><img src="source/brand/go_to_source.svg" height="16" alt="src"></a></div>`);
+        sections[section].push(`\n\n<!-- origin="file:///.${origin}#${line}" -->\n\n${content}\n\n<div align="right"><a href=".${origin}#${line}"><img src="source/brand/go_to_source.svg" height="18" alt="src"></a></div>`);
     }
 }
 

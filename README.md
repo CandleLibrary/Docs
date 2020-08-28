@@ -20,12 +20,12 @@
  CandleFW hosted documentation.
 
  Docs runs as a stand alone application that can process documentation for individual
- CandleFW libraries or build documentation for all libraries at once. It can be used
+ CandleFW libraries or build documentation for all libraries at once. It can also be used
  to build a documentation site outside the repo for personal use. Additionally, any
  repo based on Typescript or Javascript that follows the *CFW Repo Organization Pattern*
  can take advantage of cfw.Docs to auto-generate documentation.
 
-<div align="right"><a href="./source/typescript/cli.ts#L1-L13"><img src="source/brand/go_to_source.svg" height="16" alt="src"></a></div>
+<div align="right"><a href="./source/typescript/cli.ts#L1-L13"><img src="source/brand/go_to_source.svg" height="18" alt="src"></a></div>
 
 # INSTALL
 
@@ -73,7 +73,7 @@ subdirectory within
 }
 ```
 
-<div align="right"><a href="./source/doc_fragments/cfw_repo_orginization_pattern.md#L1-L18"><img src="source/brand/go_to_source.svg" height="16" alt="src"></a></div>
+<div align="right"><a href="./source/doc_fragments/cfw_repo_orginization_pattern.md#L1-L18"><img src="source/brand/go_to_source.svg" height="18" alt="src"></a></div>
 
 
 <!-- origin="file:///./source/doc_fragments/document_fragments.md#L1-L55" -->
@@ -133,7 +133,7 @@ Any one of the following :
 - CONTRIBUTORS
 TODO - Refine syntax to allow custom organization and arrangement of fragments.
 
-<div align="right"><a href="./source/doc_fragments/document_fragments.md#L1-L55"><img src="source/brand/go_to_source.svg" height="16" alt="src"></a></div>
+<div align="right"><a href="./source/doc_fragments/document_fragments.md#L1-L55"><img src="source/brand/go_to_source.svg" height="18" alt="src"></a></div>
 
 # DOCS
 [Docs](https://cfw.acweathersby.com/docs)
@@ -162,4 +162,4 @@ Markdown files in the `repo_root/source/doc_fragments`  directory and subdirecto
 that will connect to the original source file. This can be found at the bottom-right of
 the fragment contents.
 
-<div align="right"><a href="./source/doc_fragments/generating_readmes.md#L1-L13"><img src="source/brand/go_to_source.svg" height="16" alt="src"></a></div>
+<div align="right"><a href="./source/doc_fragments/generating_readmes.md#L1-L13"><img src="source/brand/go_to_source.svg" height="18" alt="src"></a></div>

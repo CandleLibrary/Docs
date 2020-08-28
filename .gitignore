@@ -80,8 +80,7 @@ About
 Press h to open a hovercard with more details.
 
 #Build directory
-!build/build_config/
-!build/wick.css
+build/
 
 #Api directory
 documents/api/*
@@ -90,4 +89,10 @@ documents/api/*
 *.sublime-workspace
 
 #HCG backup compiler files.
+*.hcgb*
+
+#sublime  workspace
+*.sublime-workspace
+
+#HCG compiler backup files.
 *.hcgb*
